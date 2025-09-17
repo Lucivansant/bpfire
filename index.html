@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BP FIRE — Proteção contra Incêndios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Paleta baseada no logo */
+    :root{--bp-red:#C8102E;--bp-navy:#0A1C3A;--bp-light:#F3F4F6}
+    /* small visual touches */
+    .card-shadow{box-shadow:0 6px 18px rgba(10,28,58,0.08)}
+    /* Efeito de máscara para o carrossel com melhor compatibilidade */
+    .logo-mask {
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
+    }
+    @media (max-width: 640px) {
+      .logo-mask {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <!-- HEADER -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-4">
+          <img src="./assets/img/traced-logo.png" alt="BP FIRE" class="h-12 w-12 object-contain">
+          <div>
+            <h1 class="text-xl font-bold text-[var(--bp-navy)]">BP FIRE</h1>
+            <p class="text-xs text-gray-500">Soluções em segurança contra incêndio</p>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
+          <a href="#servicos" class="hover:text-[var(--bp-red)] transition-colors duration-300">Serviços</a>
+          <a href="#projetos" class="hover:text-[var(--bp-red)] transition-colors duration-300">Projetos</a>
+          <a href="#sobre" class="hover:text-[var(--bp-red)] transition-colors duration-300">Sobre</a>
+          <a href="#contato" class="px-4 py-2 bg-[var(--bp-navy)] text-white rounded-md text-sm hover:opacity-90 transition-opacity duration-300">Contato</a>
+        </nav>
+
+        <!-- mobile hamburger placeholder -->
+        <div class="md:hidden">
+          <button aria-label="Abrir menu" class="p-2 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors duration-300">
+            <span class="block w-5 h-0.5 bg-gray-600 mb-1"></span>
+            <span class="block w-5 h-0.5 bg-gray-600 mb-1"></span>
+            <span class="block w-5 h-0.5 bg-gray-600"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (seção principal com texto riscado no rascunho) -->
+  <section class="bg-cover bg-center bg-blend-multiply bg-gray-100/50" style="background-image: url('./assets/img/BG.jpg');">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight text-[var(--bp-navy)]"><span class="text-[var(--bp-red)]">Assim como grandes empresas,</span> garanta a máxima proteção para o seu negócio.</h2>
+          <p class="mt-6 text-lg text-gray-700 max-w-xl">Projetos, instalação e manutenção de sistemas de prevenção e combate a incêndio. Atendimento certificado, laudos técnicos e suporte especializado — tudo pensado para reduzir riscos e proteger pessoas e patrimônio.</p>
+
+          <div class="mt-8 flex gap-4">
+            <a href="#contato" class="inline-block px-6 py-3 rounded-md bg-[var(--bp-red)] text-white font-semibold shadow hover:opacity-95 transition-opacity duration-300">Peça um Orçamento</a>
+            <a href="#projetos" class="inline-block px-6 py-3 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors duration-300">Ver Projetos</a>
+          </div>
+        </div>
+
+        <div class="order-first lg:order-last">
+          <div class="w-full h-80 bg-white rounded-xl card-shadow overflow-hidden">
+            <img src="./assets/img/imagem2.jpg" alt="Equipamentos de segurança contra incêndio" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- quick actions (linha de retângulos logo abaixo do hero no rascunho) -->
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm flex flex-col items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 12 2.25c.277 0 .525.055.75.154l.022.012m0 0A2.25 2.25 0 0 0 15 2.25c.277 0 .525.055.75.154l.022.012m-6.042 2.296H7.5a2.25 2.25 0 0 0-2.25 2.25v10.5a2.25 2.25 0 0 0 2.25 2.25h9.75a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H12" />
+          </svg>
+          <span class="text-sm font-medium">Projetos</span>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm flex flex-col items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          <span class="text-sm font-medium">Laudos Técnicos</span>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm flex flex-col items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-4.243-4.243l3.275-3.275a4.5 4.5 0 0 0-6.336 4.486c.046.58.176 1.193.34 1.743m-2.43 5.72c.218-.516.494-.986.82-1.4-2.056-1.578-5.352-1.578-7.408 0-.402.307-.79.64-1.156.982m5.72-2.43a25.53 25.53 0 0 1-2.43 5.72c-.218.516-.494.986-.82 1.4-2.056 1.578-5.352 1.578-7.408 0-.402-.307-.79.64-1.156.982" />
+          </svg>
+          <span class="text-sm font-medium">Manutenção</span>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm flex flex-col items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)]">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+          </svg>
+          <span class="text-sm font-medium">Treinamento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO SHOWCASE / CLIENTS -->
+  <section class="hidden lg:block py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <h3 class="text-center text-sm font-semibold text-gray-500 tracking-wider uppercase">Clientes que confiam na nossa segurança</h3>
+      <div class="mt-8 w-full flex flex-nowrap overflow-hidden logo-mask">
+        <ul class="logo-carousel flex items-center justify-center">
+          <li class="mx-6 sm:mx-8 flex-shrink-0"><img src="./assets/img/traced-assai_logo.png" alt="Logo Assaí Atacadista" class="h-10 sm:h-14"></li>
+          <li class="mx-6 sm:mx-8 flex-shrink-0"><img src="./assets/img/traced-atacadao-logo-1.png" alt="Logo Atacadão" class="h-10 sm:h-14"></li>
+          <li class="mx-6 sm:mx-8 flex-shrink-0"><img src="./assets/img/andre_guimaraes.jpg" alt="Logo André Guimarães" class="h-10 sm:h-14"></li>
+          <li class="mx-6 sm:mx-8 flex-shrink-0"><img src="./assets/img/traced-mhr_logo.png" alt="Logo MHR" class="h-10 sm:h-14"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO SHOWCASE / CLIENTS (MOBILE) -->
+  <section class="lg:hidden py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-center text-sm font-semibold text-gray-500 tracking-wider uppercase">Clientes que confiam na nossa segurança</h3>
+      <div class="mt-8 w-full flex flex-nowrap overflow-hidden logo-mask">
+        <ul class="logo-carousel flex items-center justify-center">
+          <li class="mx-4 flex-shrink-0"><img src="./assets/img/traced-assai_logo.png" alt="Logo Assaí Atacadista" class="h-14"></li>
+          <li class="mx-4 flex-shrink-0"><img src="./assets/img/traced-atacadao-logo-1.png" alt="Logo Atacadão" class="h-14"></li>
+          <li class="mx-4 flex-shrink-0"><img src="./assets/img/andre_guimaraes.jpg" alt="Logo André Guimarães" class="h-14"></li>
+          <li class="mx-4 flex-shrink-0"><img src="./assets/img/traced-mhr_logo.png" alt="Logo MHR" class="h-14"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSÃO DE CARTÕES (quatro cartões grandes no rascunho) -->
+  <section id="servicos" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <h3 class="text-2xl font-bold text-[var(--bp-navy)] text-center mb-8">Nossos principais serviços</h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <article class="bg-[var(--bp-red)] rounded-xl p-6 shadow-xl flex flex-col">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-navy)]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg text-white">Projeto de SPDA</h4>
+          <p class="mt-3 text-sm text-red-100">Dimensionamento, especificação e execução conforme normas vigentes.</p>
+        </article>
+        <article class="bg-[var(--bp-red)] rounded-xl p-6 shadow-xl flex flex-col">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-navy)]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.998 15.998 0 0 1 1.622-3.385m5.043.025a15.998 15.998 0 0 0 1.622-3.385m0 0a15.998 15.998 0 0 1 3.388-1.62m-5.043-.025a15.998 15.998 0 0 0-1.622-3.385m0 0a15.998 15.998 0 0 1-3.388-1.62m5.043.025a15.998 15.998 0 0 0-1.622-3.385" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg text-white">Sistema de Sprinklers</h4>
+          <p class="mt-3 text-sm text-red-100">Fornecimento e instalação completa com comissionamento técnico.</p>
+        </article>
+        <article class="bg-[var(--bp-red)] rounded-xl p-6 shadow-xl flex flex-col">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-navy)]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.048 8.287 8.287 0 0 0 9 9.6a8.983 8.983 0 0 1 3.362-3.797z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.048 8.287 8.287 0 0 0 9 9.6a8.983 8.983 0 0 1 3.362-3.797zM15.362 5.214C16.317 6.17 17 7.335 17 8.55c0 1.625-.963 3.026-2.347 3.662a8.983 8.983 0 0 1-3.362-3.797z" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg text-white">Hidrantes e Mangotinhos</h4>
+          <p class="mt-3 text-sm text-red-100">Soluções para áreas industriais e comerciais.</p>
+        </article>
+        <article class="bg-[var(--bp-red)] rounded-xl p-6 shadow-xl flex flex-col">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-navy)]">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg text-white">Sinalização e Rotas de Fuga</h4>
+          <p class="mt-3 text-sm text-red-100">Sinalética fotoluminescente e projetos de evacuação.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE DIFERENCIAIS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-[var(--bp-navy)]">Nosso Diferencial: Segurança e Eficiência do Início ao Fim</h3>
+        <p class="mt-4 text-gray-700">Não entregamos apenas projetos, mas soluções completas que garantem a tranquilidade do seu negócio. Nossa abordagem integrada cobre todas as etapas, desde a análise criteriosa até o suporte contínuo, assegurando conformidade e proteção real.</p>
+      </div>
+      <div class="mt-12">
+        <ul class="grid md:grid-cols-3 gap-8">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+            <div>
+              <h5 class="font-semibold">Análise de Risco Personalizada</h5>
+              <p class="text-sm text-gray-600">Avaliamos as particularidades do seu empreendimento para criar um projeto sob medida, otimizando custos e maximizando a segurança.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+            <div>
+              <h5 class="font-semibold">Gestão Completa e Sem Burocracia</h5>
+              <p class="text-sm text-gray-600">Cuidamos de toda a documentação e trâmites com os bombeiros, garantindo a aprovação do seu AVCB/CLCB sem dor de cabeça.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+            <div>
+              <h5 class="font-semibold">Suporte Pós-Projeto</h5>
+              <p class="text-sm text-gray-600">Oferecemos manutenção preventiva e treinamento de brigada para garantir que seu sistema esteja sempre operacional e sua equipe, preparada.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO DE TEXTO LARGO (rascunho com parágrafo central) -->
+  <section class="bg-cover bg-center bg-blend-multiply bg-gray-100" style="background-image: url('./assets/img/Design\ 5.jpg');">
+    <div class="max-w-4xl mx-auto px-6 text-center py-12">
+      <img src="./assets/img/traced-logo.png" alt="BP FIRE" class="h-16 mx-auto mb-6 opacity-80">
+      <h4 class="text-xl font-bold text-dark mb-4">Compromisso com segurança e conformidade</h4>
+      <p class="text-dark-300">A BP FIRE reúne equipe técnica qualificada e processos documentados para garantir que cada projeto atenda às normas técnicas e às necessidades específicas do cliente. Realizamos análises de risco, elaboramos projetos executivos e acompanhamos a execução para entregar resultados que funcionam na prática.</p>
+      <div class="mt-8">
+        <a href="#contato" class="inline-block px-6 py-3 rounded-md bg-[var(--bp-red)] text-white font-semibold shadow hover:opacity-95 transition-opacity duration-300">Solicitar Orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRÊS CARTÕES ALTERNADOS (foto + texto) conforme rascunho -->
+  <section id="projetos" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 grid gap-10">
+
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-4 shadow-xl border border-gray-300">
+          <div class="h-48 bg-gray-100 rounded-md overflow-hidden">
+            <img src="./assets/img/imagem01.jpg" alt="Projeto de segurança contra incêndio em um centro comercial" class="w-full h-full object-cover object-top">
+          </div>
+          <h5 class="mt-4 font-semibold">Projeto Comercial</h5>
+          <p class="mt-2 text-sm text-gray-600">Projeto de proteção em centro comercial com demanda elevada de circulação.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-4 shadow-xl border border-gray-300">
+          <div class="h-48 bg-gray-100 rounded-md overflow-hidden">
+            <img src="./assets/img/378052520_345155504532565_5818913827458831272_n.jpg" alt="Projeto de segurança contra incêndio em um centro comercial" class="w-full h-full object-cover object-center">
+          </div>
+          <h5 class="mt-4 font-semibold">Projeto Comercial</h5>
+          <p class="mt-2 text-sm text-gray-600">Projeto de proteção em centro comercial com demanda elevada de circulação.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-4 shadow-xl border border-gray-300">
+          <div class="h-48 bg-gray-100 rounded-md overflow-hidden">
+            <img src="./assets/img/imagem3.jpg" alt="Projeto de segurança contra incêndio em um centro comercial" class="w-full h-full object-cover object-center">
+          </div>
+          <h5 class="mt-4 font-semibold">Projeto Comercial</h5>
+          <p class="mt-2 text-sm text-gray-600">Projeto de proteção em centro comercial com demanda elevada de circulação.</p>
+        </div>
+      </div>
+
+
+      <!-- WHY CHOOSE US SECTION -->
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-[var(--bp-navy)]">Evite <span class="text-[var(--bp-red)]">multas</span> e <span class="text-[var(--bp-red)]">interdições</span>. Garanta a segurança do seu negócio.</h3>
+          <p class="mt-4 text-gray-700">A regularização contra incêndio é complexa e erros custam caro. Nosso serviço completo elimina a burocracia e o risco de reprovação, garantindo que sua empresa opere com segurança e dentro da lei, sem surpresas desagradáveis.</p>
+        </div>
+        <div>
+          <ul class="space-y-5">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+              <div>
+                <h5 class="font-semibold">Projetos que Aprovam de Primeira</h5>
+                <p class="text-sm text-gray-600">Chega de projetos genéricos que são reprovados. Analisamos seu risco real para criar soluções eficientes e econômicas, com foco total na aprovação junto aos bombeiros.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+              <div>
+                <h5 class="font-semibold">Sua Licença Sempre em Dia, Sem Burocracia</h5>
+                <p class="text-sm text-gray-600">Perder o prazo do AVCB significa risco de multas e interdição. Nós gerenciamos todo o processo para você, da vistoria à emissão do laudo, para que você foque no seu negócio.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" /></svg>
+              <div>
+                <h5 class="font-semibold">Segurança que Funciona na Prática</h5>
+                <p class="text-sm text-gray-600">Garantimos instalação impecável, manutenção que evita falhas e treinamento que prepara sua equipe para agir corretamente, protegendo o que mais importa: vidas.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- STATS / NUMBERS -->
+      <div id="stats-section" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center py-8 my-8 border-y border-gray-200">
+        <div>
+          <span class="text-4xl font-bold text-[var(--bp-dark)]" data-count-to="98" data-suffix="%">0%</span>
+          <p class="mt-1 text-gray-500">de aprovação de primeira</p>
+        </div>
+        <div>
+          <span class="text-4xl font-bold text-[var(--bp-dark)]" data-count-to="15">0</span>
+          <p class="mt-1 text-gray-500">anos de experiência</p>
+        </div>
+        <div>
+          <span class="text-4xl font-bold text-[var(--bp-dark)]" data-count-to="300" data-prefix="+">0</span>
+          <p class="mt-1 text-gray-500">projetos executados</p>
+        </div>
+      </div>
+
+      <!-- bloco maior com imagem ao lado direito conforme rascunho -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h4 class="text-xl font-bold text-[var(--bp-navy)]">Consultoria técnica e projetos executivos</h4>
+          <p class="mt-4 text-gray-700">Nossos projetos são liderados por nosso engenheiro responsável, especialista com vasta experiência em consultoria técnica e desenvolvimento de soluções executivas. Ele garante que cada projeto seja personalizado, seguro e alinhado às normas, desde a análise de risco até a aprovação final.</p>
+          <p class="mt-2 text-sm text-gray-600 italic">- Brayner Porto, CEO e Engenheiro Responsável</p>
+          <img src="./assets/img/traced-53f6925e11b3ef196af0e07c302208ba.png" alt="Logo da BP FIRE" class="h-14 mt-6">
+          <div class="mt-6">
+            <a href="#contato" class="inline-block px-6 py-3 bg-[var(--bp-red)] text-white rounded-md font-medium hover:opacity-95 transition-opacity duration-300">Solicitar Consulta</a>
+          </div>
+        </div>
+        <div class="w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
+          <img src="./assets/img/Brayner.jpg" alt="Engenheiro analisando um projeto técnico de segurança contra incêndio" class="w-full h-full object-cover object-top">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / CTA FINAL -->
+  <section id="contato" class="bg-white py-12 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-2">
+          <h4 class="text-2xl font-bold text-[var(--bp-navy)]">Pronto para reduzir riscos na sua empresa?</h4>
+          <p class="mt-3 text-gray-700">Fale com nossos especialistas e receba um orçamento detalhado com cronograma e custos.</p>
+        </div>
+
+        <div class="w-full">
+          <div class="bg-[var(--bp-light)] p-6 rounded-lg shadow-sm space-y-6">
+            <img src="./assets/img/traced-logo.png" alt="BP FIRE" class="h-12 mx-auto">
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)] flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-1.49 1.49c-1.97-1.12-3.633-2.783-4.753-4.753l1.49-1.49c.362-.27.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" /></svg>
+                <span class="text-gray-700">(71) 99999-9999</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)] flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                <span class="text-gray-700">contato@bpfire.com.br</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[var(--bp-red)] flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
+                <a href="#" class="text-gray-700 hover:text-[var(--bp-red)] hover:underline">@bpfire_engenharia</a>
+              </li>
+            </ul>
+            <a href="https://wa.me/5571999999999" target="_blank" class="block w-full text-center px-4 py-3 bg-[var(--bp-red)] text-white rounded-md font-medium hover:opacity-95 transition-opacity duration-300">Fazer Orçamento via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[var(--bp-navy)] text-white mt-8">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <img src="./assets/img/traced-logo.png" alt="BP FIRE" class="h-8 opacity-90">
+        <div class="text-sm">© 2025 BP FIRE • Todos os direitos reservados</div>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <a class="hover:text-[var(--bp-red)] transition-colors duration-300">Termos</a>
+        <a class="hover:text-[var(--bp-red)] transition-colors duration-300">Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const statsSection = document.getElementById('stats-section');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('[data-count-to]');
+            counters.forEach(counter => {
+              animateCount(counter);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      function animateCount(element) {
+        const target = parseInt(element.dataset.countTo, 10);
+        const prefix = element.dataset.prefix || '';
+        const suffix = element.dataset.suffix || '';
+        const duration = 2000; // 2 segundos
+        let start = null;
+
+        const step = (timestamp) => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          element.textContent = prefix + Math.floor(progress * target) + suffix;
+          if (progress < 1) window.requestAnimationFrame(step);
+        };
+        window.requestAnimationFrame(step);
+      }
+
+      if (statsSection) observer.observe(statsSection);
+
+      // --- Animação do Carrossel de Logos com JavaScript ---
+      const carousels = document.querySelectorAll('.logo-carousel');
+
+      carousels.forEach(carousel => {
+        // 1. Duplicar os logos para criar o efeito contínuo
+        const logos = Array.from(carousel.children);
+        if (logos.length > 0) {
+          logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true'); // Esconde dos leitores de tela
+            carousel.appendChild(clone);
+          });
+
+          // 2. Lógica da animação
+          let position = 0;
+          const speed = 0.5; // Ajuste a velocidade (pixels por frame)
+
+          function animateLogos() {
+            position -= speed;
+            // Calcula a largura total da primeira metade dos logos
+            const halfwayPoint = carousel.scrollWidth / 2;
+
+            // Se a animação passou da metade, reseta a posição
+            if (Math.abs(position) >= halfwayPoint) {
+              position = 0;
+            }
+
+            carousel.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animateLogos);
+          }
+          requestAnimationFrame(animateLogos);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
